@@ -1,10 +1,55 @@
+Login Form
+
 {% extends "layout.html" %}
-{% block title %}Flask MVC App{% endblock %}
-{% block page %}Flask MVC App{% endblock %}
+{% block title %}{% endblock %}
 
 {{ super() }}
 
 {% block content %}
-    <h1>Flask MVC</h1>
-    <p>This is a boileplate flask application which follows the MVC pattern for structuring the project.</p>
+<body class="mainbody">
+       
+    <form class="loginform"  method="POST" action="/login">
+        <h1 id="heading">Login</h1>
+    
+        <label id="username">Username</label>
+        <input type="text" name="username" ><br>
+    
+        <label id="password">Password</label>
+        <input type="password"  name="password" ><br><br>
+    
+        <input id="loginbtn" type="submit" value="Login">
+        <p class="signup"> Not a user? <a href="/signup">Signup</a> </p>
+    </form>
+    
+    
+    
+{% endblock %}
+
+Sign Up Form
+
+{% extends "layout.html" %}
+{% block title %}{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+<body class="mainbody">
+
+    
+    <form class="loginform"  method="POST" action="/login">
+        <h1 id="heading">Signup</h1>
+    
+        <label id="username">Username</label>
+        <input type="text" name="username" ><br>
+    
+        <label id="password">Password</label>
+        <input type="password"  name="password" ><br><br>
+
+        <label id="password">Confirm Password</label>
+        <input type="password"  name="password" ><br><br>
+    
+        <input id="loginbtn" type="submit" value="Create User">
+        <p class="signup"> Already a user? <a href="/">Login</a> </p>
+    </form>
+    
 {% endblock %}
