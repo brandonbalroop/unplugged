@@ -1,4 +1,36 @@
-Login Form
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Transportation Mapper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper teal" style="padding-left: 10px;">
+        <a href="#!" class="brand-logo">Transportation Mapper</a>
+        <ul class="right">
+          <li><a href="index.html">Listing</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <main class="row">
+      <aside class="col s0 m3 collection" id="listing" style="max-height:600px; overflow-y: scroll;"></aside>
+      <article class="col m9" id="result"></article>
+    </main>
+
+    <script>
+
+      async function getInfo(api_url){
+        const response = await fetch(api_url);
+        const data = await response.json();
+        return data;
+             
+      }Login Form
 
 {% extends "layout.html" %}
 {% block title %}{% endblock %}
@@ -53,3 +85,7 @@ Sign Up Form
     </form>
     
 {% endblock %}
+        </script>
+        
+  </body>
+</html>
